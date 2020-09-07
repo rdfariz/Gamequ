@@ -36,8 +36,5 @@ class MainActivity : AppCompatActivity() {
         return navCtrl.navigateUp()
     }
 
-    override fun onStop() {
-        super.onStop()
-    }
 }
 

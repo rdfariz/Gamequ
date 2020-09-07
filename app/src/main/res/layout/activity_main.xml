@@ -14,7 +14,8 @@
         android:id="@+id/nav_host_fragment_container"
         app:defaultNavHost="true"
         app:navGraph="@navigation/navigation"
-        tools:layout="@layout/fragment_home">
+        tools:layout="@layout/fragment_home"
+        tools:ignore="FragmentTagUsage">
     </fragment>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

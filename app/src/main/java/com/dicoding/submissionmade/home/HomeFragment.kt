@@ -1,13 +1,11 @@
 package com.dicoding.submissionmade.home
 
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.core.data.Resource
 import com.dicoding.core.ui.GamesAdapter
@@ -42,7 +40,7 @@ class HomeFragment : Fragment() {
                 startActivity(intent)
             }
 
-            homeViewModel.games.observe(viewLifecycleOwner, Observer { games ->
+            homeViewModel.games.observe(viewLifecycleOwner, { games ->
                 if (games != null) {
                     when (games) {
                         is Resource.Loading -> progress_bar.visibility = View.VISIBLE
@@ -87,8 +85,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun toggleTheme () {
-        val isNightTheme = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
-        when (isNightTheme) {
+        when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
             Configuration.UI_MODE_NIGHT_YES ->
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             Configuration.UI_MODE_NIGHT_NO ->

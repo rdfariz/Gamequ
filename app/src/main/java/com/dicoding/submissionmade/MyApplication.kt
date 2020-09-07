@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.dicoding.submissionmade
 
 import android.app.Application
