@@ -2,13 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/to_toggleTheme"
-        android:icon="@drawable/ic_baseline_brightness_6_24_white"
+        android:id="@+id/to_aboutCreator"
+        android:icon="@drawable/ic_baseline_account_circle_24_white"
         android:title=""
         app:showAsAction="always"
-        />
-    <item
-        android:id="@+id/to_aboutCreator"
-        android:title="@string/about_creator"
     />
 </menu>

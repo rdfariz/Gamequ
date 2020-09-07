@@ -1,4 +1,4 @@
-package com.dicoding.core.domain
+package com.dicoding.core
 
 import com.dicoding.core.data.Resource
 import com.dicoding.core.domain.model.Game
@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 @RunWith(MockitoJUnitRunner::class)
-class GameUseCaseTest {
+class GamesUseCaseTest {
     private lateinit var gamesUseCase: GamesUseCase
 
     @Mock
