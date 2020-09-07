@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Submission Made</string>
+    <string name="image_description">Image</string>
+
+    <string name="title_activity_detail_home">DetailHomeActivity</string>
+    <string name="something_wrong">Oops.. something went wrong</string>
+    <string name="no_data">Empty Data</string>
+    <string name="title_original_name">Original Name</string>
+    <string name="default_text">-</string>
+    <string name="title_rating">Rating</string>
+    <string name="title_release_date">Release Date</string>
+    <string name="title_description">Description</string>
+    <string name="about_creator">About Creator</string>
+    <string name="title_game_loading">Title Game Loading</string>
+    <string name="rating_game_loading">Rating Game Loading</string>
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>
