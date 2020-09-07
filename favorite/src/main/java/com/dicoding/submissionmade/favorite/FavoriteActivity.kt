@@ -2,20 +2,19 @@ package com.dicoding.submissionmade.favorite
 
 import android.content.DialogInterface
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.core.ui.GamesAdapter
-import com.dicoding.submissionmade.favorite.di.favoriteModule
 import com.dicoding.submissionmade.detail.DetailGameActivity
-import org.koin.android.viewmodel.ext.android.viewModel
-import org.koin.core.context.loadKoinModules
-import androidx.lifecycle.Observer
+import com.dicoding.submissionmade.favorite.di.favoriteModule
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_favorite.*
+import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.core.context.loadKoinModules
 
 class FavoriteActivity : AppCompatActivity() {
 
@@ -40,7 +39,7 @@ class FavoriteActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        favoriteViewModel.favoriteGames.observe(this, Observer { dataGame ->
+        favoriteViewModel.favoriteGames.observe(this, { dataGame ->
             gamesAdapter.setData(dataGame)
             view_empty.visibility = if (dataGame.isNotEmpty()) View.GONE else View.VISIBLE
         })

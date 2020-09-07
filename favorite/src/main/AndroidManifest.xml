@@ -12,6 +12,6 @@
     </dist:module>
 
     <application>
-        <activity android:name="com.dicoding.submissionmade.favorite.FavoriteActivity"></activity>
+        <activity android:name="com.dicoding.submissionmade.favorite.FavoriteActivity" />
     </application>
 </manifest>

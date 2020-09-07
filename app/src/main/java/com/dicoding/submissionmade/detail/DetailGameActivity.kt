@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.dicoding.core.data.Resource
 import com.dicoding.core.domain.model.Game
@@ -41,7 +40,7 @@ class DetailGameActivity : AppCompatActivity() {
     }
 
     private fun getDetailGame(id: String) {
-        detailGameViewModel.getDetailGame(id).observe(this, Observer { game ->
+        detailGameViewModel.getDetailGame(id).observe(this, { game ->
             when (game) {
                 is Resource.Loading -> {
                     progress_bar.visibility = View.VISIBLE

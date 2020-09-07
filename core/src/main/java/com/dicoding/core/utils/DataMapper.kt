@@ -27,7 +27,7 @@ object DataMapper {
     }
 
     fun mapResponsesDetailToEntities(input: GameResponse): GamesEntity {
-        val game = GamesEntity(
+        return GamesEntity(
             id = input.id,
             description = input.description,
             name = input.name,
@@ -39,7 +39,6 @@ object DataMapper {
             reviews_count = input.reviews_count,
             image = input.image
         )
-        return game
     }
 
     fun mapEntitiesToDomain(input: List<GamesEntity>): List<Game> =
