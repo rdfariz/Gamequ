@@ -35,4 +35,8 @@ dependencies {
 
     //Security_Crypto
     implementation "androidx.security:security-crypto:$crypto_version"
+
+    //Mockito
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation "org.mockito:mockito-inline:$mockito_version"
 }

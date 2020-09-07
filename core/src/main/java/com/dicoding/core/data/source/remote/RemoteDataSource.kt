@@ -7,6 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import java.net.UnknownHostException
 
 class RemoteDataSource(private val apiService: ApiService) {
     suspend fun getAllGames(page: Int, page_size: Int): Flow<ApiResponse<List<GameResponse>>> {
@@ -19,8 +20,10 @@ class RemoteDataSource(private val apiService: ApiService) {
                 } else {
                     emit(ApiResponse.Empty)
                 }
+            } catch (e: UnknownHostException) {
+                emit(ApiResponse.Error("Something went wrong.\nReconnect to the Internet and Try again"))
             } catch (e: Exception) {
-                emit(ApiResponse.Error(e.toString()))
+                emit(ApiResponse.Error(e.message.toString()))
             }
         }.flowOn(Dispatchers.IO)
     }
@@ -30,8 +33,10 @@ class RemoteDataSource(private val apiService: ApiService) {
             try {
                 val response = apiService.getDetail(id)
                 emit(ApiResponse.Success(response))
+            } catch (e: UnknownHostException) {
+                emit(ApiResponse.Error("Something went wrong.\nReconnect to the Internet and Try again"))
             } catch (e: Exception) {
-                emit(ApiResponse.Error(e.toString()))
+                emit(ApiResponse.Error(e.message.toString()))
             }
         }.flowOn(Dispatchers.IO)
     }
