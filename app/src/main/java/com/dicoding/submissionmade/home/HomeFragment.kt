@@ -1,10 +1,8 @@
 package com.dicoding.submissionmade.home
 
 import android.content.Intent
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.*
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.core.data.Resource
@@ -75,21 +73,11 @@ class HomeFragment : Fragment() {
             R.id.to_aboutCreator -> {
                 val alertDialogBuilder = context?.let { MaterialAlertDialogBuilder(it) }
                 alertDialogBuilder?.setTitle("About Creator")
-                alertDialogBuilder?.setMessage("Raden Fariz Insan P\n\nSUBMISSION 1 - DICODING MADE")
+                alertDialogBuilder?.setMessage("Raden Fariz Insan P\n\nSUBMISSION FINAL - DICODING MADE")
                 alertDialogBuilder?.setCancelable(true)
                 alertDialogBuilder?.show()
             }
-            R.id.to_toggleTheme -> toggleTheme()
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun toggleTheme () {
-        when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
-            Configuration.UI_MODE_NIGHT_YES ->
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            Configuration.UI_MODE_NIGHT_NO ->
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        }
     }
 }
